@@ -123,13 +123,13 @@ up=$(uptime|awk '{ $1=$2=$(NF-6)=$(NF-5)=$(NF-4)=$(NF-3)=$(NF-2)=$(NF-1)=$NF="";
 tram=$( free -m | awk 'NR==2 {print $2}' )
 echo -e ""
 echo -e "\033[0;34m╒═════════════════════════════════════════════════════════════╕
-      ${NC}Welcome To ${GREEN}ARTA VPS ${NC}Script installer ${GREEN}( Pro Edition )
+      ${NC}Welcome To ${GREEN}Vluks Store ${NC}Script installer ${GREEN}( Pro Edition )
          ${NC} This Script Coded on Bash & Python Language
         This Will Quick Setup VPN Server On Your Server
-                   Owner : ${GREEN} M. ARTA MAULANA
-             ${NC}Copyright © By: ARTA VPS (2022-2033)
+                   Owner : ${GREEN} Wak Vluks
+             ${NC}Copyright © By: Vluks (2022-2033)
 ${yl}
- =============(Script Auto instal: ARTA MAULANA)=============="
+ =============(Script Auto instal: Wak Vluks)=============="
 echo -e "\033[0;34m╒═════════════════════════════════════════════════════════════╕\033[0m${NC}"
 echo -e " \E[41;1;39m                     ⇱ INFORMASI VPS ⇲                       \E[0m"
 echo -e "\033[0;34m╘═════════════════════════════════════════════════════════════╛\033[0m${NC}"
@@ -156,7 +156,7 @@ datediff() {
 mai="datediff "$Exp" "$DATE""
 if [ $exp \> 1000 ];
 then
-    echo -e "  ✪$bd $NC Expiry script     ${color1} • $(( (d1 - d2) / 86400 )) Days"
+    echo -e "  ✪$bd Expiry script     ${color1} • $(( (d1 - d2) / 86400 )) Days"
 else
     datediff "$Exp" "$DATE"
 fi;
