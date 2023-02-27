@@ -156,7 +156,7 @@ datediff() {
 mai="datediff "$Exp" "$DATE""
 if [ $exp \> 1000 ];
 then
-    echo -e "  ✪$bd $NC License     : Lifetime"
+    echo -e "  ✪$bd $NC Expiry script     ${color1} • $(( (d1 - d2) / 86400 )) Days"
 else
     datediff "$Exp" "$DATE"
 fi;
