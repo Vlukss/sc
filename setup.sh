@@ -177,7 +177,7 @@ screen -S sstp ./sstp.sh >/dev/null 2>&1
 #install ssr
 echo -e "[ ${green}INFO$NC ] Downloading & Installing shadowsocks R"
 sleep 3
-wget https://autosc.me/ssr/ssr.sh >/dev/null 2>&1
+wget https://${akbarvpnnn}/ssr/ssr.sh >/dev/null 2>&1
 chmod +x ssr.sh >/dev/null 2>&1
 screen -S ssr ./ssr.sh >/dev/null 2>&1
 echo -e "[ ${green}INFO$NC ] Downloading & Installing shadowsocks"
