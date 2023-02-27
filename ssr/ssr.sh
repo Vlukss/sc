@@ -14,7 +14,7 @@ off='\x1b[m'
 # Getting
 
 # Link Hosting Kalian
-akbarvpn="raw.githubusercontent.com/kmardhex/rev/main/ssr"
+akbarvpn="raw.githubusercontent.com/Vlukss/sc/main/ssr"
 
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
