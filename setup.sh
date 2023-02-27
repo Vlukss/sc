@@ -314,7 +314,7 @@ echo "   - White Label" | tee -a log-install.txt
 echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "   - Dev/Main                : Wak Vluks"  | tee -a log-install.txt
-echo "   - Recode                  : Wak vluks" | tee -a log-install.txt
+echo "   - Recode                  : Vluks" | tee -a log-install.txt
 echo "   - Instagram               : Vluks_"  | tee -a log-install.txt
 echo "   - Whatsapp                : wa.me/6287854543721"  | tee -a log-install.txt
 echo "   - Tele                    : t.me/mannnn_07" | tee -a log-install.txt
