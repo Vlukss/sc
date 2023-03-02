@@ -129,7 +129,7 @@ echo -e "\033[0;34m╒═══════════════════�
                    Owner : ${GREEN} Wak Vluks
              ${NC}Copyright © By: Vluks (2022-2033)
 ${yl}
- =============(Script Auto instal: Wak Vluks)=============="
+ =============(Script Auto install: Wak Vluks)=============="
 echo -e "\033[0;34m╒═════════════════════════════════════════════════════════════╕\033[0m${NC}"
 echo -e " \E[41;1;39m                     ⇱ INFORMASI VPS ⇲                       \E[0m"
 echo -e "\033[0;34m╘═════════════════════════════════════════════════════════════╛\033[0m${NC}"
@@ -172,7 +172,7 @@ echo -e "[${GREEN}01${NC}]${color1} •${color3}$bd PANEL SSH & OpenVPN     [${G
 [${GREEN}07${NC}]${color1} •${color3}$bd GANTI Port All Acount   [${GREEN}15${NC}]${color1} •${color3}$bd Restart VPS
 [${GREEN}08${NC}]${color1} •${color3}$bd CEK Status \033[1;32mRUNNING${NC}      [${GREEN}00${NC}]${color1} •${color3}$bd \033[1;31mCEK AREK AKTIF${NC} \033[1;32m<\033[1;33m<\033[1;31m<\033[1;31m"
 echo -e "\033[0;34m╒═════════════════════════════════════════════════════════════╕\033[0m${NC}"
-echo -e " \E[41;1;39m                   ⇱ VLUKS STORE ⇲                   \E[0m"
+echo -e " \E[41;1;39m                   ⇱ VLUKS STORE ⇲                           \E[0m"
 echo -e "\033[0;34m╘═════════════════════════════════════════════════════════════╛\033[0m${NC}"
 echo -e  ""
  read -p "  Select menu :  " menu
