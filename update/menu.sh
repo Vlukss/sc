@@ -98,7 +98,7 @@ uis="${GREEN}Premium User$NC"
 else
 uis="${RED}Free Version$NC"
 fi
-echo -e "  ✪$bd User Rules        ${color1} •${yl}$bd Premium user"
+echo -e "  ✪$bd User Rules        ${color1} •${yl}$bd Premium user${NC}"
 echo -e "  ✪$bd ISP Name          ${color1} •${color3}$bd $ISP"
 echo -e "  ✪$bd City              ${color1} •${color3}$bd $CITY"
 echo -e "  ✪$bd Total RAM         ${color1} •${yl}$bd $tram MB${NC}"
