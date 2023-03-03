@@ -1,17 +1,4 @@
 #!/bin/bash
-dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
-###########- COLOR CODE -##############
-export NC="\e[0m"
-export YELLOW='\033[0;33m';
-export RED="\033[0;31m"               
-###########- END COLOR CODE -##########
-tram=$( free -h | awk 'NR==2 {print $2}' )
-uram=$( free -h | awk 'NR==2 {print $3}' )
-ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
-CITY=$(curl -s ipinfo.io/city )
-
-
 BURIQ () {
     curl -sS https://raw.githubusercontent.com/Vlukss/permission/main/ipmini > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
@@ -32,7 +19,6 @@ BURIQ () {
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
 Name=$(curl -sS https://raw.githubusercontent.com/Vlukss/permission/main/ipmini | grep $MYIP | awk '{print $2}')
-Isadmin=$(curl -sS https://raw.githubusercontent.com/Vlukss/permission/main/ipmini | grep $MYIP | awk '{print $5}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -57,43 +43,17 @@ PERMISSION () {
     fi
     BURIQ
 }
-
-x="ok"
-
-
+red='\e[1;31m'
+green='\e[1;32m'
+NC='\e[0m'
+green() { echo -e "\\033[32;1m${*}\\033[0m"; }
+red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 PERMISSION
 
 if [ "$res" = "Expired" ]; then
 Exp="\e[36mExpired\033[0m"
-rm -f /home/needupdate > /dev/null 2>&1
 else
 Exp=$(curl -sS https://raw.githubusercontent.com/Vlukss/permission/main/ipmini | grep $MYIP | awk '{print $3}')
-fi
-export RED='\033[0;31m'
-export GREEN='\033[0;32m'
-
-# // SSH Websocket Proxy
-ssh_ws=$( systemctl status ws-stunnel | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
-if [[ $ssh_ws == "running" ]]; then
-    status_ws="${GREEN}ON${NC}"
-else
-    status_ws="${RED}OFF${NC}"
-fi
-
-# // nginx
-nginx=$( systemctl status nginx | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
-if [[ $nginx == "running" ]]; then
-    status_nginx="${GREEN}ON${NC}"
-else
-    status_nginx="${RED}OFF${NC}"
-fi
-
-# // SSH Websocket Proxy
-xray=$( systemctl status xray | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
-if [[ $xray == "running" ]]; then
-    status_xray="${GREEN}ON${NC}"
-else
-    status_xray="${RED}OFF${NC}"
 fi
 
 GREEN='\033[0;32m'
@@ -146,20 +106,8 @@ echo -e "  ✪$bd IP VPS            ${color1} •${color3}$bd $MYIP"
 echo -e "  ✪$bd DOMAIN VPS        ${color1} •${CYAN}$bd $DOMAIN${NC}"
 echo -e "  ✪$bd Waktu Aktif       ${color1} •${or}$bd $up${NC}"
 echo -e "  ✪$bd Client Name       ${color1} •${color3}$bd $Name"
+echo -e "  ✪$bd Exp Script        ${color1} •${yl}$bd $Exp Day"
 
-DATE=$(date +'%d %B %Y')
-datediff() {
-    d1=$(date -d "$1" +%s)
-    d2=$(date -d "$2" +%s)
-    echo -e "  ✪$bd Expiry script     ${color1} • $(( (d1 - d2) / 86400 )) Days"
-}
-mai="datediff "$Exp" "$DATE""
-if [ $exp \> 1000 ];
-then
-    echo -e "  ✪$bd Expiry script     ${color1} • $(( (d1 - d2) / 86400 )) Days"
-else
-    datediff "$Exp" "$DATE"
-fi;
 echo -e "\033[0;34m╒═════════════════════════════════════════════════════════════╕\033[0m${NC}"
 echo -e " \E[41;1;39m                     ⇱ MENU PANEL VPS ⇲                      \E[0m"
 echo -e "\033[0;34m╘═════════════════════════════════════════════════════════════╛\033[0m${NC}"
@@ -172,7 +120,7 @@ echo -e "[${GREEN}01${NC}]${color1} •${color3}$bd PANEL SSH & OpenVPN     [${G
 [${GREEN}07${NC}]${color1} •${color3}$bd GANTI Port All Acount   [${GREEN}15${NC}]${color1} •${color3}$bd Restart VPS
 [${GREEN}08${NC}]${color1} •${color3}$bd CEK Status \033[1;32mRUNNING${NC}      [${GREEN}00${NC}]${color1} •${color3}$bd \033[1;31mCEK AREK AKTIF${NC} \033[1;32m<\033[1;33m<\033[1;31m<\033[1;31m"
 echo -e "\033[0;34m╒═════════════════════════════════════════════════════════════╕\033[0m${NC}"
-echo -e " \E[41;1;39m                       ⇱ VLUKS STORE ⇲                        \E[0m"
+echo -e " \E[41;1;39m                       ⇱ VLUKS STORE ⇲                       \E[0m"
 echo -e "\033[0;34m╘═════════════════════════════════════════════════════════════╛\033[0m${NC}"
 echo -e  ""
  read -p "  Select menu :  " menu
